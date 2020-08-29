@@ -119,3 +119,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
+alias conda_init='eval "$(/home/dave/miniconda3/bin/conda shell.bash hook)"'
