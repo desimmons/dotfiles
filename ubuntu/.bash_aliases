@@ -19,8 +19,8 @@ __git_complete gbs __git_rebase
 alias g="git"
 __git_complete g __git_main
 
-alias go="git checkout"
-__git_complete go _git_checkout
+alias gc="git checkout"
+__git_complete gc _git_checkout
 
 alias gp="git push"
 __git_complete gp _git_push
@@ -34,6 +34,7 @@ alias gr="git reset"
 
 alias gf="git fetch"
 
+alias gsign="git rebase --exec 'git commit --amend --no-edit -n -s' -i"
 
 ### Build infrastructure ###
 
@@ -49,6 +50,14 @@ alias bnas='cmake -DCMAKE_BUILD_TYPE=Debug -DASAN=ON -GNinja -DCMAKE_EXE_LINKER_
 
 alias bnub='cmake -DCMAKE_BUILD_TYPE=Debug -DUBSAN=ON -GNinja -DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=gold -Wl,--threads -Wl,--thread-count=$(nproc) .. && ninja'
 
+
+### Services infrastructure
+
+alias doclog='aws ecr get-login-password --region us-west-1 | docker login --username AWS --password-stdin 725306096176.dkr.ecr.us-west-1.amazonaws.com'
+
+alias ecrlog='aws codeartifact login --tool pip --repository zenith_sdk_prototype --domain zenith --domain-owner 725306096176'
+
+alias tf="terraform"
 
 ### Python aliases ###
 alias pct='pre-commit run --all-files'
