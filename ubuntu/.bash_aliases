@@ -34,7 +34,7 @@ alias gr="git reset"
 
 alias gf="git fetch"
 
-alias gsign="git rebase --exec 'git commit --amend --no-edit -n -s' -i"
+alias gsign="git rebase --exec 'git commit --amend --no-edit -n -S' -i"
 
 ### Build infrastructure ###
 
